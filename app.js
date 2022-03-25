@@ -48,6 +48,6 @@ console.log(JSON.stringify(Krepšys.vaisiai));
 console.log(Krepšys.isimti());
 console.log(Krepšys.isimti());
 console.log(JSON.stringify(Krepšys.vaisiai));
-Krepšys.pripildyti();
+Krepšys.papildyti();
 console.log(Krepšys.vaisiai);
 console.log(grauztukai);
