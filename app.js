@@ -17,6 +17,16 @@ class Vaisius {
 class Krepšys {
   static vaisiai = [];
   static pripildyti() {
+    if (this.vaisiai.length === 0) {
+      for (let i = 0; i < 20; i++) {
+        this.vaisiai.push(new Vaisius());
+      }
+      this.vaisiai.sort((a, b) => b.dydis - a.dydis);
+    } else {
+      this.papildyti();
+    }
+  }
+  static papildyti() {
     while (this.vaisiai.length < 20) {
       this.vaisiai.push(new Vaisius());
     }
@@ -26,7 +36,7 @@ class Krepšys {
     const biggest = this.vaisiai[0];
     this.vaisiai.shift();
     biggest.prakasti();
-    grauztukai.set(biggest.id, biggest);;
+    grauztukai.set(biggest.id, biggest);
     return biggest;
   }
 }
@@ -41,4 +51,3 @@ console.log(JSON.stringify(Krepšys.vaisiai));
 Krepšys.pripildyti();
 console.log(Krepšys.vaisiai);
 console.log(grauztukai);
-
